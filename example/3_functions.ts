@@ -9,7 +9,7 @@ function add(a: number, b: number) {
 }
 
 // 타입스크립트 함수 선언 - 함수의 반환 타입
-function add(a: number, b: number): number {
+function addNumber(a: number, b: number): number {
     return a + b;
 }
 
@@ -18,7 +18,7 @@ function add(a: number, b: number): number {
 // }
 
 // 함수 인자
-function log(a: string) {
+function log(a: string , b?: number) {
     console.log(a);
 }
 log('a', 10);

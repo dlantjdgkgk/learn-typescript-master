@@ -29,4 +29,3 @@ let isLogin: boolean = false;
 
 const p : {name: string; age: number} = { name: 'Capt', age: 100 };
 
-const a :string[]=[]

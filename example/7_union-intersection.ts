@@ -23,6 +23,19 @@ function log(value: string | number) {
   throw new TypeError("오류 발생");
 }
 
+function logt<T>(value:T):T{
+  return value
+}
+logt<string>("안녕하세요")
+logt<number>(12)
+
+
+function onion(value : string | number){
+
+}
+onion("안녕하세요")
+onion(3)
+
 
 // # Union 타입 문법 타입 문법
 interface Developer {

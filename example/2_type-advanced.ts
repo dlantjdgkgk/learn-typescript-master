@@ -8,8 +8,7 @@ const myHero = Avengers.Capt;
 
 // any
 let a: any = 'hi';
-a = 20;
-a = false;
+
 
 // void
 function sayHi(): void {
