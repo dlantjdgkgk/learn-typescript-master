@@ -68,12 +68,13 @@ getNumberAndArray<string>([])
 
 
 // 제네릭 타입 제한 - keyof
-interface ShoppingItems {
+interface ShoppingItems { 
   name: string;
   price: number;
   address: string;
   stock: number;
-}
+} 
+
 function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
   if (option === 'name' || option === 'address') {
     console.log('option type is string');
@@ -84,6 +85,6 @@ function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
     return option;
   }
 }
-getAllowedOptions('nothing');
+getAllowedOptions('name');
 // const a = getAllowedOptions('name');
 // a.toUpperCase(); // Name
