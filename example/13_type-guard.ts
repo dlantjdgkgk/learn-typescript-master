@@ -9,7 +9,7 @@ interface Person{
 }
 
 function introduce() : Developer | Person{
-  return { name: "John", age: 12 , skill: "web"}
+  return { name: "John", age: 12 , skill: "android"}
 }
 
 let tony = introduce()
