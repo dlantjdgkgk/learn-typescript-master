@@ -25,7 +25,7 @@ else if((tony as Person).age){
 }
 
 // 이렇게 복잡한 코드를 간단하게 작성하기 위하여 타입 가드가 나왔다.
-// 타입가드 정의
+// 타입가드 정의 
 function isDeveloper(target : Developer | Person): target is Developer {
   return( target as Developer).skill !== undefined
 }
