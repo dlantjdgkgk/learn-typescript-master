@@ -1,7 +1,7 @@
 // 인터페이스
 interface User {
-  name: string;
-  age: number;
+    name: string;
+    age: number;
 }
 
 // 변수에 사용하는 경우
@@ -9,38 +9,36 @@ const seho: User = { name: 'hi', age: 100 };
 
 // 함수의 매개변수에 사용하는 경우
 function getUser(user: User) {
-  console.log(user);
+    console.log(user);
 }
 const cap = {
-  name: 'hi', age: 100 
-}
+    name: 'hi',
+    age: 100,
+};
 getUser(cap);
 
 // 함수의 전체 타입에 사용하는 경우
 interface SumFunction {
-  (a: number, b: number): number;
+    (a: number, b: number): number;
 }
 let sum: SumFunction;
-sum = function (num1: number, num2: number): number {
-  return num1 + num2;
+sum = (num1, num2) => {
+    return num1 + num2;
 };
 
 // 배열의 인덱싱에 사용하는 경우
 interface StringArray {
-  [index: number]: string;
+    [index: number]: string;
 }
 let arr: StringArray;
 arr[0] = 'hi';
 
-
 // 인터페이스 확장
 interface Person {
-  name: string;
-  age: number; // 옵셔널 선택자 ? 동일하게 적용 가능
+    name: string;
+    age: number; // 옵셔널 선택자 ? 동일하게 적용 가능
 }
 interface Developer extends Person {
-  language: string;
-} 
+    language: string;
+}
 const joo: Developer = { name: 'joo', age: 20, language: 'ts' };
-
-

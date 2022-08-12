@@ -41,8 +41,13 @@ function logText<T>(value: T): T {
     console.log(value);
     return value;
 }
-
 const result = logText<string>('안녕하세요');
+
+const c = <T>(value: T): T => {
+    return value;
+};
+
+c<String>('hello');
 
 // 제네릭 기본 문법 - 인터페이스
 interface Developert<T> {
@@ -74,16 +79,22 @@ interface ShoppingItems {
     stock: number;
 }
 
-function getAllowedOptions<T extends keyof ShoppingItems>(option: T): any {
-    if (option === 'name' || option === 'address') {
-        console.log('option type is string');
-        return option;
-    }
-    if (option === 'price' || option === 'stock') {
-        console.log('option type is number');
-        return option;
-    }
-}
-getAllowedOptions('name');
+// const getAllowedOptions = <T extends keyof ShoppingItems>(option: T): any => {
+//     if (option === 'name' || option === 'address') {
+//         console.log('option type is string');
+//         return option;
+//     }
+//     if (option === 'price' || option === 'stock') {
+//         console.log('option type is number');
+//         return option;
+//     }
+// };
+// getAllowedOptions('name');
 // const a = getAllowedOptions('name');
 // a.toUpperCase(); // Name
+
+const getAllowedOptions = <T extends keyof ShoppingItems>(option: T): any => {
+    if (option === 'name' || option === 'address') {
+        return option;
+    }
+};
