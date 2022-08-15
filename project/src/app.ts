@@ -1,15 +1,18 @@
 // utils
-function $(selector) {
+function $(selector: string) {
     return document.querySelector(selector);
 }
-function getUnixTimestamp(date) {
+function getUnixTimestamp(date: Date) {
     return new Date(date).getTime();
 }
 
 // DOM
-const confirmedTotal = $('.confirmed-total');
+let a: Element | HTMLElement | HTMLParagraphElement;
+// element >> HTMLElement >> HTMLParagraphElement
+
+const confirmedTotal = $('.confir med-total');
 const deathsTotal = $('.deaths');
-const recoveredTotal = $('.recovered');
+const recoveredTotal = $('.recovered') as HTMLParagraphElement;
 const lastUpdatedTime = $('.last-updated-time');
 const rankList = $('.rank-list');
 const deathsList = $('.deaths-list');
@@ -36,13 +39,19 @@ function createSpinnerElement(id) {
 let isDeathLoading = false;
 let isRecoveredLoading = false;
 
+enum CovidStatus {
+    Deaths = 'deaths',
+    Recovered = 'recovered',
+    Confirmed = 'confirmed',
+}
+
 // api
 function fetchCovidSummary() {
     const url = 'https://api.covid19api.com/summary';
     return axios.get(url);
 }
 
-function fetchCountryInfo(countryCode, status) {
+function fetchCountryInfo(countryCode: string, status) {
     // params: confirmed, recovered, deaths
     const url = `https://api.covid19api.com/country/${countryCode}/status/${status}`;
     return axios.get(url);
@@ -59,7 +68,7 @@ function initEvents() {
     rankList.addEventListener('click', handleListClick);
 }
 
-async function handleListClick(event) {
+async function handleListClick(event: any) {
     let selectedId;
     if (
         event.target instanceof HTMLParagraphElement ||
@@ -115,7 +124,6 @@ function setDeathsList(data) {
         deathsList.appendChild(li);
     });
 }
-
 function clearDeathList() {
     deathsList.innerHTML = null;
 }
