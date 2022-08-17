@@ -5,7 +5,8 @@
         "outDir": "./built",
         "moduleResolution": "Node",
         "noImplicitAny": true,
-        "lib": ["ES2015", "DOM", "DOM.Iterable"]
+        "lib": ["ES2015", "DOM", "DOM.Iterable"],
+        "strict": true
     },
     "include": ["./src/**/*"]
 }
